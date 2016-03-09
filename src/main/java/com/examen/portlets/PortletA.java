@@ -43,6 +43,7 @@ public class PortletA extends GenericPortlet {
 
 		response.setEvent(qname, persona);
 		
+		request.setAttribute("envioDatos", persona);
 	
 
 	}
@@ -59,10 +60,34 @@ public class PortletA extends GenericPortlet {
 		QName qname = new QName("http://enviar.portletc.com", "envioDatosc", "x");
 
 		response.setEvent(qname, persona);
+		
+		request.setAttribute("envioDatos", persona);
 	
 
 	}
    
+    @ProcessEvent(qname = "{http://enviar.portletb.com}envioDatosb")
+	public void procesarEventoB(EventRequest request, EventResponse response) throws PortletException, IOException {
+		Event evento = request.getEvent();
+
+		Serializable persona = evento.getValue();
+
+		request.setAttribute("envioDatos", persona);
+		
+		
+
+	}
+    
+    @ProcessEvent(qname = "{http://enviar.portletc.com}envioDatosc")
+	public void procesarEventoC(EventRequest request, EventResponse response) throws PortletException, IOException {
+		Event evento = request.getEvent();
+
+		Serializable persona = evento.getValue();
+
+		request.setAttribute("envioDatos", persona);
+		
+    }
+
 
     public void doView(
             RenderRequest renderRequest, RenderResponse renderResponse)

@@ -12,7 +12,7 @@
 
 
 <%
-Persona persona = (Persona)request.getAttribute("datos");
+Persona persona = (Persona)request.getAttribute("envioDatos");
 if(persona!=null){
 %>
 <form action="" method="post">

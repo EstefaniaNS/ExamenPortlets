@@ -32,6 +32,12 @@
 		<security-role-ref>
 			<role-name>user</role-name>
 		</security-role-ref>
+        <supported-processing-event>
+            <qname xmlns:x="http://enviar.portletb.com">x:envioDatosb</qname>
+        </supported-processing-event>
+        <supported-processing-event>
+            <qname xmlns:x="http://enviar.portletc.com">x:envioDatosc</qname>
+        </supported-processing-event>
         <supported-publishing-event>
             <qname xmlns:x="http://enviar.portletb.com">x:envioDatosb</qname>
         </supported-publishing-event>
